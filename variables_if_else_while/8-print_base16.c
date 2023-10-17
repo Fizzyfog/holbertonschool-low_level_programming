@@ -17,7 +17,7 @@ int main(void)
 		num++;
 	}
 
-	while (letter >= 'a')
+	while (letter >= 'f')
 	{
 		putchar(letter);
 		letter++;
