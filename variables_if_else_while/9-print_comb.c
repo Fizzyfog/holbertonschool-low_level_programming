@@ -14,14 +14,17 @@ int main(void)
 	while (digit <= '9')
 	{
 		putchar(digit + '0');
-	}
+
 
 		if (digit < '9')
-	{
-		putchar(',');
-		putchar(' ');
-	}
+		{
 
+			putchar(',');
+			putchar(' ');
+		}
+
+		digit++;
+	}
 	putchar('\n');
 
 	return (0);
