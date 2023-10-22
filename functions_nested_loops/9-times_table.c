@@ -3,7 +3,7 @@
 /**
 * times_table - prints the 9 time tables, starting with 0
 *
-*Return: nothing
+* return: nothing
 */
 void times_table(void)
 {
@@ -17,6 +17,9 @@ void times_table(void)
 			if (col == 0)
 			{
 				_putchar('0');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 			}
 			else
 			{
