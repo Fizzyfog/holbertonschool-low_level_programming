@@ -6,10 +6,6 @@
 *
 * Return: length of string
 */
-/**
-* rev_string - Reverses a string
-* @s - string to reverse
-*/
 int _strlen(char *s)
 {
 	int strLength = 0;
@@ -19,7 +15,12 @@ int _strlen(char *s)
 
 	return (strLength);
 }
-
+ /**
+* rev_string - Reverses a string
+* @s - The string to reverse
+*
+* Return: void
+*/
 void rev_string(char *s)
 {
 	int length = _strlen(s);
