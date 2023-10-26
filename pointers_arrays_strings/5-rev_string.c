@@ -17,7 +17,7 @@ int _strlen(char *s)
 }
 /**
 * rev_string - Reverses a string
-* @s - The string to reverse
+* @s: The string to reverse
 *
 * Return: void
 */
