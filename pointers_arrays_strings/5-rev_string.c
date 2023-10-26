@@ -15,7 +15,7 @@ int _strlen(char *s)
 
 	return (strLength);
 }
- /**
+/**
 * rev_string - Reverses a string
 * @s - The string to reverse
 *
@@ -26,10 +26,14 @@ void rev_string(char *s)
 	int length = _strlen(s);
 	int start = 0;
 	int end = length - 1;
+	char tmp;
 
 	while (start < end)
 	{
+		tmp = s[start];
 		s[start] = s[end];
+		s[end] = tmp;
+
 		start++;
 		end--;
 	}
