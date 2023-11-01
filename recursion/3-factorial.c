@@ -11,9 +11,7 @@ int factorial(int n)
 	if (n < 0)
 		return (-1);
 
-	// Check if n == 0 (logical operator NOT)
 	else if (!n)
-		// if n == 0, return 1 (0! = 1 in maths convention)
 		return (1);
 
 	return (n * factorial(n - 1));
