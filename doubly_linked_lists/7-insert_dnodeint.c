@@ -22,47 +22,53 @@ size_t dlistint_len(const dlistint_t *h)
 }
 
 /**
- * delete_dnodeint_at_index - Deletes the node at index
- * @head: Pointer to a pointer of first node
- * @index: Index of node that should be deleted starting at 0
+ * insert_dnodeint_at_index - Inserts a new node at a given position
+ * @h: Pointer to pointer of first node
+ * @idx: Index of the list where the new node should be added
+ * @n: Value to be assigned to node
  *
- * Return: 1 on success or -1 on failure
+ * Return: Address of new node or NULL on failure
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current, *tmp;
+	dlistint_t *current, *new;
 	unsigned int i;
 
-	if (!*head || index > dlistint_len(*head))
-		return (-1);
-	tmp = *head;
-	current = *head;
+	current = *h;
 	i = 1;
 
-	while (i < index)
+	if ((!current && idx) || idx > dlistint_len(*h))
+		return (NULL);
+	while (i < idx)
 	{
-		if (!tmp)
-			return (-1);
+		if (!current)
+			return (NULL);
 		++i;
-		tmp = tmp->next;
+		current = current->next;
 	}
-	if (index)
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+
+	if (idx)
 	{
-		current = tmp->next;
-		tmp->next = current->next;
-		if (tmp->next)
+		new->prev = current;
+		new->next = current->next;
+		current->next = new;
+		if (new->next)
 		{
-			tmp = tmp->next;
-			tmp->prev = current->prev;
+			current = new->next;
+			current->prev = new;
 		}
 	}
 	else
 	{
-		*head = (*head)->next;
-		if (*head)
-			(*head)->prev = NULL;
-
+		new->prev = NULL;
+		new->next = current;
+		if (new->next)
+			current->prev = new;
+		*h = new;
 	}
-	free(current);
-	return (1);
+	new->n = n;
+	return (new);
 }
