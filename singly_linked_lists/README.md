@@ -35,7 +35,7 @@ All your files will be compiled on Ubuntu 20.04 LTS using [gcc], using the optio
 
 
 ### [5. The Hare and the Tortoise](./100-first.c)
-* 
+* /* Will add soon. */
 
 ---
 
