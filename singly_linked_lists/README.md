@@ -1,4 +1,4 @@
-# 0x11. C - Singly linked lists
+C - Singly linked lists
 
 ## Description
 Holberton's school project on singly linked lists : 
@@ -36,11 +36,6 @@ All your files will be compiled on Ubuntu 20.04 LTS using [gcc], using the optio
 
 ### [5. The Hare and the Tortoise](./100-first.c)
 * 
-
-
-### [6. Real programmers can write assembly code in any language](./101-hello_holberton.asm)
-* Write a 64-bit program in assembly that prints Hello, Holberton, followed by a new line.
-
 
 ---
 
