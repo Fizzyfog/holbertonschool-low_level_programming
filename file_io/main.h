@@ -8,6 +8,12 @@
 #include <fcntl.h>
 #include <string.h>
 
+/*for defining system data types used by system calls */
+#include <sys/types.h>
+
+/* defining struct returned by functions, ex: stat(), fstat(), lstat() */
+#include <sys/stat.h>
+
 /* Function prototypes */
 int _putchar(char c);
 int _strlen(char *s);
