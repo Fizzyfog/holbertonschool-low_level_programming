@@ -25,19 +25,19 @@ int _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fileDescriptor;
+	int fileDescrpt;
 
 	if (!filename)
 		return (-1);
     /* Open or create file with rw------- permissions */
-	fileDescriptor = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	fileDescrpt = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
     /* Return 1 if text_content is NULL (create empty file)*/
 	if (!text_content)
 		return (1);
     /* Write text_content to file, return -1 if fail.*/
-	if (write(fileDescriptor, text_content, _strlen(text_content)) == -1)
+	if (write(fileDescrpt, text_content, _strlen(text_content)) == -1)
 		return (-1);
 
-	close(fileDescriptor);
+	close(fileDescrpt);
 	return (1);
 }
