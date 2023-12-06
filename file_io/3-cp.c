@@ -10,11 +10,9 @@
 int main(int argc, char *argv[])
 {
 	int sourceFile, destFile, status;
-
 	/* Buffer to hold data read from source file, 1024 bytes*/
 	char buffer[1024];
 
-	/* check if correct number of arguments was passed */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -35,7 +33,7 @@ int main(int argc, char *argv[])
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
-		}	
+		}
 	}
 	if (status < 0)
 	{
