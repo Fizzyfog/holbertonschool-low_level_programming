@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	destFile = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	destFile = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
+				 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	while ((status = read(sourceFile, buffer, 1024)) > 0)
 	{
 		if ((write(destFile, buffer, status)) != status || destFile < 0)
